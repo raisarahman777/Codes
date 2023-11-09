@@ -2,6 +2,8 @@
 #define lili long long int
 using namespace std;
 
+//Find the length of LIS
+//Time complexity: O(n^2)
 int lengthOfLIS(vector<int>& arr) {
 	int n = arr.size();
 	int lis_len_ending_here[n + 1];
