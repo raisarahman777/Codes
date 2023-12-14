@@ -4,7 +4,7 @@ using namespace std;
 int n = 14;
 int arr[] = {5, 9, 10, 10, 10, 14, 17, 17, 20, 22, 22, 22, 22, 29};
 
-int first_index(int first, int last, int x) {
+int firstIndex(int first, int last, int x) {
     int lo = first, hi = last, mid;
     while(lo < hi) {
         mid = (lo + hi) / 2;
@@ -21,7 +21,7 @@ int first_index(int first, int last, int x) {
     return -1;
 }
 
-// int first_index(int first, int last, int x) {
+// int firstIndex(int first, int last, int x) {
 //     int lo = first, hi = last, mid, ans = -1;
 //     while(lo <= hi) {
 //         mid = (lo + hi) / 2;
@@ -38,7 +38,7 @@ int first_index(int first, int last, int x) {
 //     return ans;
 // }
 
-int last_index(int first, int last, int x) {
+int lastIndex(int first, int last, int x) {
     int lo = first, hi = last, mid;
     while(lo < hi) {
         mid = (lo + hi + 1) / 2;
@@ -55,7 +55,7 @@ int last_index(int first, int last, int x) {
     return -1;
 }
 
-// int last_index(int first, int last, int x) {
+// int lastIndex(int first, int last, int x) {
 //     int lo = first, hi = last, mid, ans = -1;
 //     while(lo <= hi) {
 //         mid = (lo + hi) / 2;
@@ -72,7 +72,7 @@ int last_index(int first, int last, int x) {
 //     return ans;
 // }
 
-int greater_than(int first, int last, int x) {
+int greaterThan(int first, int last, int x) {
     if(arr[last] <= x) {
         return -1;
     }
@@ -89,7 +89,7 @@ int greater_than(int first, int last, int x) {
     return lo;
 }
 
-// int greater_than(int first, int last, int x) {
+// int greaterThan(int first, int last, int x) {
 //     int lo = first, hi = last, mid, ans = -1;
 //     while(lo <= hi) {
 //         mid = (lo + hi) / 2;
@@ -104,7 +104,7 @@ int greater_than(int first, int last, int x) {
 //     return ans;
 // }
 
-int greater_than_or_equal(int first, int last, int x) {
+int greaterThanOrEqualTo(int first, int last, int x) {
     if(arr[last] < x) {
         return -1;
     }
@@ -121,7 +121,7 @@ int greater_than_or_equal(int first, int last, int x) {
     return lo;
 }
 
-// int greater_than_or_equal(int first, int last, int x) {
+// int greaterThanOrEqualTo(int first, int last, int x) {
 //     int lo = first, hi = last, mid, ans = -1;
 //     while(lo <= hi) {
 //         mid = (lo + hi) / 2;
@@ -139,6 +139,6 @@ int greater_than_or_equal(int first, int last, int x) {
 int main() {
     int x;
     while(cin >> x) {
-        cout << greater_than_or_equal(0, n - 1, x) << endl;
+        cout << greaterThanOrEqualTo(0, n - 1, x) << endl;
     }
 }
