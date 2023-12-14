@@ -136,6 +136,20 @@ int greaterThanOrEqualTo(int first, int last, int x) {
 //     return ans;
 // }
 
+double squareRoot(double x) {
+    double lo = 0, hi = x;
+    while(hi - lo > 0.0000001) {
+        double mid = (lo + hi) / 2;
+        if(mid * mid > x) {
+            hi = mid;
+        }
+        else {
+            lo = mid;
+        }
+    }
+    return lo;
+}
+
 int main() {
     int x;
     while(cin >> x) {
