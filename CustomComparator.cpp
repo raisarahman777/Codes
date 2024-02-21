@@ -20,6 +20,8 @@ bool cmp3(pair<int, int> x, pair<int, int> y) {
     return x > y;
 }
 
+// Sort by second: https://vjudge.net/solution/49200100/9XKnvrwsYjt4aJ8lvekn
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
