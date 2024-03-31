@@ -4,20 +4,19 @@ using namespace std;
 
 //Find the length of LIS
 //Time complexity: O(nlogn)
-int lengthOfLIS(vector<int>& arr) {
-	int n = arr.size();
-	vector<int> ans;
-	ans.push_back(arr[0]);
-	for(int i = 1; i < arr.size(); i++) {
-		if(arr[i] > ans.back()) {
-			ans.push_back(arr[i]);
-		}
-		else {
-			int ind = lower_bound(ans.begin(), ans.end(), arr[i]) - ans.begin();
-			ans[ind] = arr[i];
-		}
-	}
-	return ans.size();
+int lengthOfLIS(int* a, int n) {
+    lili dp[n + 1];
+    dp[0] = -INF;
+    for(int i = 1; i <= n; i++) dp[i] = INF;
+    for(int i = 1; i <= n; i++) {
+        int l = upper_bound(dp, dp + n + 1, a[i]) - dp;
+        if(dp[l - 1] < a[i] && a[i] < dp[l]) dp[l] = a[i];
+    }
+    int ans = 0;
+    for (int i = 1; i <= n; i++) {
+        if(dp[i] < INF) ans = i;
+    }
+    return ans;
 }
 
 int main() {
