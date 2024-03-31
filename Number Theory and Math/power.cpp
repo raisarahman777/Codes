@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#define lili long long int
+#define lili unsigned long long int
 using namespace std;
 
 const int MOD = 998244353;
