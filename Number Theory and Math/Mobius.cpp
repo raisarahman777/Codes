@@ -33,7 +33,26 @@ void Mobius() {
 }
 
 void solve() {
-    
+    find_smallest_prime_factor();
+    Mobius();
+    int n;
+    cin >> n;
+    ll a[n + 1];
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
+        cnt[a[i]]++;
+    }
+    ll ans = 0;
+    for (ll i = 1; i < N; i++) {
+        if (mobius[i]) {
+            ll d = 0;
+            for (ll j = i; j < N; j += i) {
+                d += cnt[j];
+            }
+            ans += mobius[i] * ((d * (d - 1)) / 2);
+        }
+    }
+    cout << ans << "\n";
 }
 
 int main() {
